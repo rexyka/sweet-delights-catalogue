@@ -5,6 +5,24 @@ import FeaturedProductCard from "@/components/FeaturedProductCard";
 import ProductCard from "@/components/ProductCard";
 import { featuredProducts, catalogueProducts, categories } from "@/data/products";
 
+const featuredHighlights = [
+  {
+    icon: ChefHat,
+    title: "Fresh Daily",
+    description: "Baked in small batches",
+  },
+  {
+    icon: Sparkles,
+    title: "Custom Flavors",
+    description: "Pick your favorite taste",
+  },
+  {
+    icon: MessageCircle,
+    title: "Easy Ordering",
+    description: "Send orders via WhatsApp",
+  },
+];
+
 const Index = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -57,82 +75,125 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="relative py-16 md:py-24 overflow-hidden bg-secondary/40">
-        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle, hsl(352 59% 30%) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+      <section className="relative -mt-10 md:-mt-16 z-10 pb-16 md:pb-24">
+        <div className="bakery-container">
+          <div className="relative overflow-hidden rounded-[2rem] border border-primary/15 bg-card shadow-hero">
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/40 to-background" />
+            <div
+              className="absolute inset-0 opacity-[0.025]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, hsl(352 59% 30%) 1px, transparent 1px)",
+                backgroundSize: "24px 24px",
+              }}
+            />
+            <div className="absolute -top-20 right-0 h-48 w-48 rounded-full bg-primary/10 blur-3xl" />
+            <div className="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-accent/10 blur-3xl" />
 
-        <div className="bakery-container relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-14"
-          >
-            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-1.5 mb-4">
-              <Sparkles className="w-4 h-4 text-accent" />
-              <span className="text-sm font-body font-semibold text-primary uppercase tracking-widest">
-                Our Bestsellers
-              </span>
-              <Sparkles className="w-4 h-4 text-accent" />
+            <div className="relative px-5 py-12 md:px-8 md:py-16 lg:px-10">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-center mb-10 md:mb-14"
+              >
+                <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-1.5 mb-4">
+                  <Sparkles className="w-4 h-4 text-accent" />
+                  <span className="text-sm font-body font-semibold text-primary uppercase tracking-widest">
+                    Our Bestsellers
+                  </span>
+                  <Sparkles className="w-4 h-4 text-accent" />
+                </div>
+                <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
+                  Featured Products
+                </h2>
+                <p className="text-muted-foreground font-body mt-3 max-w-2xl mx-auto text-sm md:text-base">
+                  Our most loved treats, handpicked for you with richer flavors, custom sizes, and direct ordering.
+                </p>
+                <div className="w-20 h-1 bg-accent rounded-full mx-auto mt-5" />
+              </motion.div>
+
+              <div className="grid gap-3 sm:grid-cols-3 mb-8 md:mb-12">
+                {featuredHighlights.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <div
+                      key={item.title}
+                      className="rounded-2xl border border-primary/10 bg-background/80 px-4 py-4 shadow-card backdrop-blur-sm"
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-card">
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <p className="font-heading text-base font-bold text-foreground">
+                            {item.title}
+                          </p>
+                          <p className="font-body text-sm text-muted-foreground">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="space-y-10 md:space-y-14">
+                {featuredProducts.map((product, index) => (
+                  <FeaturedProductCard key={product.id} product={product} index={index} />
+                ))}
+              </div>
             </div>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
-              Featured Products
-            </h2>
-            <p className="text-muted-foreground font-body mt-3 max-w-lg mx-auto text-sm md:text-base">
-              Our most loved treats, handpicked for you. Choose your size and flavor, then order directly!
-            </p>
-            <div className="w-20 h-1 bg-accent rounded-full mx-auto mt-5" />
-          </motion.div>
-
-          <div className="space-y-10 md:space-y-14">
-            {featuredProducts.map((product, index) => (
-              <FeaturedProductCard key={product.id} product={product} index={index} />
-            ))}
           </div>
         </div>
       </section>
 
-
       {/* Catalogue */}
-      <section className="bg-secondary/50 py-16 md:py-24">
-        <div className="bakery-container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-10"
-          >
-            <span className="text-sm font-body font-semibold text-accent uppercase tracking-widest">
-              Explore More
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
-              Our Catalogue
-            </h2>
-          </motion.div>
+      <section className="relative pb-16 md:pb-24">
+        <div className="absolute inset-x-0 top-16 h-48 bg-primary/5 blur-3xl" />
+        <div className="bakery-container relative z-10">
+          <div className="rounded-[2rem] border border-primary/10 bg-secondary/45 px-4 py-10 shadow-card md:px-8 md:py-14">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-10"
+            >
+              <span className="text-sm font-body font-semibold text-accent uppercase tracking-widest">
+                Explore More
+              </span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
+                Our Catalogue
+              </h2>
+            </motion.div>
 
-          {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2 rounded-xl text-sm font-body font-semibold transition-all duration-200 border ${
-                  activeCategory === category
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-card text-foreground border-border hover:border-primary/50"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+            {/* Category Filters */}
+            <div className="flex flex-wrap justify-center gap-2 mb-10">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-5 py-2 rounded-xl text-sm font-body font-semibold transition-all duration-200 border ${
+                    activeCategory === category
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-card text-foreground border-border hover:border-primary/50"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
 
-          {/* Product Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-            {filteredProducts.map((product, index) => (
-              <ProductCard key={product.id} product={product} index={index} />
-            ))}
+            {/* Product Grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+              {filteredProducts.map((product, index) => (
+                <ProductCard key={product.id} product={product} index={index} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
