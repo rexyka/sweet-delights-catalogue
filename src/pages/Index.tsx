@@ -63,33 +63,40 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="bakery-container py-16 md:py-24">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <div className="inline-flex items-center gap-2 mb-3">
-            <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-sm font-body font-semibold text-accent uppercase tracking-widest">
-              Our Bestsellers
-            </span>
-            <Sparkles className="w-4 h-4 text-accent" />
-          </div>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
-            Featured Products
-          </h2>
-          <p className="text-muted-foreground font-body mt-3 max-w-lg mx-auto">
-            Our most loved treats, handpicked for you. Choose your size and flavor!
-          </p>
-        </motion.div>
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        {/* Subtle patterned background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(352 59% 30%) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
 
-        <div className="space-y-8">
-          {featuredProducts.map((product, index) => (
-            <FeaturedProductCard key={product.id} product={product} index={index} />
-          ))}
+        <div className="bakery-container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-1.5 mb-4">
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span className="text-sm font-body font-semibold text-primary uppercase tracking-widest">
+                Our Bestsellers
+              </span>
+              <Sparkles className="w-4 h-4 text-accent" />
+            </div>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
+              Featured Products
+            </h2>
+            <p className="text-muted-foreground font-body mt-3 max-w-lg mx-auto text-sm md:text-base">
+              Our most loved treats, handpicked for you. Choose your size and flavor, then order directly!
+            </p>
+            <div className="w-20 h-1 bg-accent rounded-full mx-auto mt-5" />
+          </motion.div>
+
+          <div className="space-y-10 md:space-y-14">
+            {featuredProducts.map((product, index) => (
+              <FeaturedProductCard key={product.id} product={product} index={index} />
+            ))}
+          </div>
         </div>
       </section>
 
