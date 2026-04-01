@@ -6,22 +6,22 @@
 
 @layer base {
   :root {
-    --background: 39 100% 94%;
+    --background: 30 40% 96%;
     --foreground: 0 21% 21%;
 
-    --card: 30 53% 93%;
+    --card: 30 30% 97%;
     --card-foreground: 0 21% 21%;
 
-    --popover: 39 100% 94%;
+    --popover: 30 40% 96%;
     --popover-foreground: 0 21% 21%;
 
     --primary: 352 59% 30%;
-    --primary-foreground: 39 100% 94%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 53% 93%;
+    --secondary: 30 35% 90%;
     --secondary-foreground: 0 21% 21%;
 
-    --muted: 30 53% 89%;
+    --muted: 30 25% 88%;
     --muted-foreground: 0 15% 40%;
 
     --accent: 43 66% 52%;
@@ -30,8 +30,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 30% 82%;
-    --input: 30 30% 82%;
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
     --ring: 352 59% 30%;
 
     --radius: 1rem;
@@ -40,9 +40,9 @@
     --font-body: 'Lato', sans-serif;
     --font-heading: 'Montserrat', sans-serif;
 
-    --shadow-card: 0 4px 20px -4px hsl(352 59% 30% / 0.08);
-    --shadow-card-hover: 0 12px 32px -8px hsl(352 59% 30% / 0.15);
-    --shadow-hero: 0 8px 40px -12px hsl(352 59% 30% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(352 59% 30% / 0.1);
+    --shadow-card-hover: 0 12px 32px -8px hsl(352 59% 30% / 0.18);
+    --shadow-hero: 0 8px 40px -12px hsl(352 59% 30% / 0.25);
   }
 }
 

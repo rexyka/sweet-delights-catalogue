@@ -56,11 +56,29 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Maroon transition strip */}
+      <div className="bg-primary py-6 md:py-8">
+        <div className="bakery-container flex items-center justify-center gap-6 md:gap-12 text-primary-foreground/80">
+          <div className="flex items-center gap-2">
+            <Star className="w-4 h-4 text-accent fill-accent" />
+            <span className="font-body text-xs md:text-sm font-medium">Handcrafted Daily</span>
+          </div>
+          <div className="w-px h-4 bg-primary-foreground/20" />
+          <div className="flex items-center gap-2">
+            <Star className="w-4 h-4 text-accent fill-accent" />
+            <span className="font-body text-xs md:text-sm font-medium">Premium Ingredients</span>
+          </div>
+          <div className="w-px h-4 bg-primary-foreground/20 hidden sm:block" />
+          <div className="hidden sm:flex items-center gap-2">
+            <Star className="w-4 h-4 text-accent fill-accent" />
+            <span className="font-body text-xs md:text-sm font-medium">Made with Love</span>
+          </div>
+        </div>
+      </div>
+
       {/* Featured Products */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
-        {/* Subtle patterned background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(352 59% 30%) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+      <section className="relative py-16 md:py-24 overflow-hidden bg-secondary/40">
+        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle, hsl(352 59% 30%) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
 
         <div className="bakery-container relative z-10">
           <motion.div
