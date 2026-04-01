@@ -21,8 +21,8 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
-        <div className="relative bakery-container py-28 md:py-40 text-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/55 to-background" />
+        <div className="relative bakery-container py-20 md:py-40 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
