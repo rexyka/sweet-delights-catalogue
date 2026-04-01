@@ -39,7 +39,7 @@ const Index = () => {
               <br />
               <span className="text-accent">Happiness</span>
             </h1>
-            <p className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8 leading-relaxed">
+            <p className="font-body text-base md:text-xl text-white/85 max-w-2xl mx-auto mb-8 leading-relaxed">
               Handcrafted pastries and desserts made with love, premium ingredients,
               and generations of baking tradition.
             </p>
