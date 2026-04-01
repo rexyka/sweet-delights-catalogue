@@ -56,26 +56,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Maroon transition strip */}
-      <div className="bg-primary py-6 md:py-8">
-        <div className="bakery-container flex items-center justify-center gap-6 md:gap-12 text-primary-foreground/80">
-          <div className="flex items-center gap-2">
-            <Star className="w-4 h-4 text-accent fill-accent" />
-            <span className="font-body text-xs md:text-sm font-medium">Handcrafted Daily</span>
-          </div>
-          <div className="w-px h-4 bg-primary-foreground/20" />
-          <div className="flex items-center gap-2">
-            <Star className="w-4 h-4 text-accent fill-accent" />
-            <span className="font-body text-xs md:text-sm font-medium">Premium Ingredients</span>
-          </div>
-          <div className="w-px h-4 bg-primary-foreground/20 hidden sm:block" />
-          <div className="hidden sm:flex items-center gap-2">
-            <Star className="w-4 h-4 text-accent fill-accent" />
-            <span className="font-body text-xs md:text-sm font-medium">Made with Love</span>
-          </div>
-        </div>
-      </div>
-
       {/* Featured Products */}
       <section className="relative py-16 md:py-24 overflow-hidden bg-secondary/40">
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle, hsl(352 59% 30%) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
@@ -112,31 +92,6 @@ const Index = () => {
         </div>
       </section>
 
-
-      {/* Maroon divider band */}
-      <section className="bg-primary py-10 md:py-14 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-4 left-[10%] w-20 h-20 rounded-full border-2 border-white/30" />
-          <div className="absolute bottom-4 right-[15%] w-32 h-32 rounded-full border-2 border-white/20" />
-        </div>
-        <div className="bakery-container text-center relative z-10">
-          <h3 className="font-display text-xl md:text-2xl font-bold text-primary-foreground mb-2">
-            Craving something sweet?
-          </h3>
-          <p className="font-body text-primary-foreground/70 mb-5 text-sm md:text-base">
-            Browse our full menu below or order your favorites now!
-          </p>
-          <a
-            href="https://wa.me/?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb855] text-[#fff] font-body font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg"
-          >
-            <MessageCircle className="w-5 h-5" />
-            Order Now
-          </a>
-        </div>
-      </section>
 
       {/* Catalogue */}
       <section className="bg-secondary/50 py-16 md:py-24">
