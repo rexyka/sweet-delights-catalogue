@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { Product, formatPrice, buildWhatsAppUrl } from "@/data/products";
 
@@ -14,6 +14,11 @@ const FeaturedProductCard = ({ product, index }: FeaturedProductCardProps) => {
 
   const whatsappUrl = buildWhatsAppUrl(product.name, selectedSize, selectedFlavor);
 
+  const currentImage =
+    selectedFlavor && product.flavorImages?.[selectedFlavor]
+      ? product.flavorImages[selectedFlavor]
+      : product.image;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -25,12 +30,19 @@ const FeaturedProductCard = ({ product, index }: FeaturedProductCardProps) => {
       <div className="md:flex">
         {/* Image */}
         <div className="md:w-2/5 relative overflow-hidden">
-          <img
-            src={product.image}
-            alt={product.name}
-            loading={index === 0 ? undefined : "lazy"}
-            className="w-full h-64 md:h-full object-cover transition-transform duration-700 hover:scale-105"
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentImage}
+              src={currentImage}
+              alt={`${product.name} - ${selectedFlavor}`}
+              loading={index === 0 ? undefined : "lazy"}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.4 }}
+              className="w-full h-64 md:h-full object-cover"
+            />
+          </AnimatePresence>
           <div className="absolute top-4 left-4 bg-primary px-3 py-1 rounded-full">
             <span className="text-primary-foreground text-xs font-semibold font-body tracking-wide uppercase">
               Featured
@@ -41,7 +53,7 @@ const FeaturedProductCard = ({ product, index }: FeaturedProductCardProps) => {
         {/* Content */}
         <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
           <div>
-            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
+            <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">
               {product.name}
             </h3>
             <p className="text-muted-foreground font-body mb-4 leading-relaxed">
@@ -50,7 +62,7 @@ const FeaturedProductCard = ({ product, index }: FeaturedProductCardProps) => {
             <p className="text-muted-foreground text-sm font-body mb-1">
               {product.priceLabel}
             </p>
-            <p className="font-display text-2xl font-bold text-primary mb-6">
+            <p className="font-heading text-2xl font-bold text-primary mb-6">
               {formatPrice(product.price)}
             </p>
 

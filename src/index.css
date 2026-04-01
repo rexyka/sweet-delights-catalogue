@@ -38,6 +38,7 @@
 
     --font-display: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
 
     --shadow-card: 0 4px 20px -4px hsl(352 59% 30% / 0.08);
     --shadow-card-hover: 0 12px 32px -8px hsl(352 59% 30% / 0.15);

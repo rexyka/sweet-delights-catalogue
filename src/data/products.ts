@@ -9,6 +9,7 @@ export interface Product {
   isFeatured?: boolean;
   sizes?: string[];
   flavors?: string[];
+  flavorImages?: Record<string, string>;
 }
 
 export const products: Product[] = [
@@ -23,6 +24,13 @@ export const products: Product[] = [
     isFeatured: true,
     sizes: ["Small (6pcs)", "Medium (12pcs)", "Large (24pcs)"],
     flavors: ["Chocolate", "Vanilla", "Strawberry", "Matcha", "Caramel"],
+    flavorImages: {
+      Chocolate: "/images/sus-chocolate.jpg",
+      Vanilla: "/images/sus-vanilla.jpg",
+      Strawberry: "/images/sus-strawberry.jpg",
+      Matcha: "/images/sus-matcha.jpg",
+      Caramel: "/images/sus-caramel.jpg",
+    },
   },
   {
     id: "pudding",
@@ -35,6 +43,13 @@ export const products: Product[] = [
     isFeatured: true,
     sizes: ["Small", "Medium", "Large"],
     flavors: ["Chocolate", "Vanilla", "Mango", "Strawberry", "Taro"],
+    flavorImages: {
+      Chocolate: "/images/pudding-chocolate.jpg",
+      Vanilla: "/images/pudding-vanilla.jpg",
+      Mango: "/images/pudding-mango.jpg",
+      Strawberry: "/images/pudding-strawberry.jpg",
+      Taro: "/images/pudding-taro.jpg",
+    },
   },
   {
     id: "brownies",

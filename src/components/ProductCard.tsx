@@ -39,7 +39,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
           {product.description}
         </p>
         <div className="flex items-center justify-between">
-          <span className="font-display text-xl font-bold text-primary">
+          <span className="font-heading text-xl font-bold text-primary">
             {formatPrice(product.price)}
           </span>
           <a
