@@ -25,11 +25,11 @@ const FeaturedProductCard = ({ product, index }: FeaturedProductCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
-      className="bg-card rounded-2xl shadow-card overflow-hidden hover:shadow-card-hover transition-shadow duration-500"
+      className="bg-card rounded-2xl shadow-card overflow-hidden hover:shadow-card-hover transition-shadow duration-500 border border-primary/10"
     >
       <div className="md:flex">
         {/* Image */}
-        <div className="md:w-2/5 relative overflow-hidden">
+        <div className="md:w-2/5 relative overflow-hidden bg-primary/5">
           <AnimatePresence mode="wait">
             <motion.img
               key={currentImage}
@@ -51,31 +51,31 @@ const FeaturedProductCard = ({ product, index }: FeaturedProductCardProps) => {
         </div>
 
         {/* Content */}
-        <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
+        <div className="md:w-3/5 p-5 md:p-8 flex flex-col justify-between">
           <div>
-            <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">
+            <h3 className="font-heading text-xl md:text-3xl font-bold text-foreground mb-2">
               {product.name}
             </h3>
-            <p className="text-muted-foreground font-body mb-4 leading-relaxed">
+            <p className="text-muted-foreground font-body text-sm md:text-base mb-3 leading-relaxed">
               {product.description}
             </p>
-            <p className="text-muted-foreground text-sm font-body mb-1">
+            <p className="text-muted-foreground text-xs md:text-sm font-body mb-1">
               {product.priceLabel}
             </p>
-            <p className="font-heading text-2xl font-bold text-primary mb-6">
+            <p className="font-heading text-xl md:text-2xl font-bold text-primary mb-5">
               {formatPrice(product.price)}
             </p>
 
             {/* Size Selection */}
             {product.sizes && (
-              <div className="mb-5">
+              <div className="mb-4">
                 <p className="text-sm font-semibold font-body text-foreground mb-2">Size</p>
                 <div className="flex flex-wrap gap-2">
                   {product.sizes.map((size) => (
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
-                      className={`px-4 py-2 rounded-xl text-sm font-body font-medium transition-all duration-200 border ${
+                      className={`px-3 md:px-4 py-1.5 md:py-2 rounded-xl text-xs md:text-sm font-body font-medium transition-all duration-200 border ${
                         selectedSize === size
                           ? "bg-primary text-primary-foreground border-primary shadow-md"
                           : "bg-background text-foreground border-border hover:border-primary/50"
@@ -90,14 +90,14 @@ const FeaturedProductCard = ({ product, index }: FeaturedProductCardProps) => {
 
             {/* Flavor Selection */}
             {product.flavors && (
-              <div className="mb-6">
+              <div className="mb-5">
                 <p className="text-sm font-semibold font-body text-foreground mb-2">Flavor</p>
                 <div className="flex flex-wrap gap-2">
                   {product.flavors.map((flavor) => (
                     <button
                       key={flavor}
                       onClick={() => setSelectedFlavor(flavor)}
-                      className={`px-4 py-2 rounded-xl text-sm font-body font-medium transition-all duration-200 border ${
+                      className={`px-3 md:px-4 py-1.5 md:py-2 rounded-xl text-xs md:text-sm font-body font-medium transition-all duration-200 border ${
                         selectedFlavor === flavor
                           ? "bg-primary text-primary-foreground border-primary shadow-md"
                           : "bg-background text-foreground border-border hover:border-primary/50"
