@@ -32,7 +32,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
         <span className="text-xs font-body font-semibold text-muted-foreground uppercase tracking-wider">
           {product.category}
         </span>
-        <h3 className="font-display text-lg font-bold text-foreground mt-1 mb-2">
+        <h3 className="font-heading text-lg font-bold text-foreground mt-1 mb-2">
           {product.name}
         </h3>
         <p className="text-muted-foreground text-sm font-body mb-4 line-clamp-2 leading-relaxed">
