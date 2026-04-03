@@ -2,47 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 30 40% 96%;
-    --foreground: 0 21% 21%;
+    /* Deep, warm palette — maroon-forward with golden warmth */
+    --background: 30 25% 95%;
+    --foreground: 350 30% 12%;
 
-    --card: 30 30% 97%;
-    --card-foreground: 0 21% 21%;
+    --card: 30 20% 97%;
+    --card-foreground: 350 30% 12%;
 
-    --popover: 30 40% 96%;
-    --popover-foreground: 0 21% 21%;
+    --popover: 30 20% 97%;
+    --popover-foreground: 350 30% 12%;
 
-    --primary: 352 59% 30%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 350 55% 25%;
+    --primary-foreground: 35 30% 95%;
 
-    --secondary: 30 35% 90%;
-    --secondary-foreground: 0 21% 21%;
+    --secondary: 30 30% 90%;
+    --secondary-foreground: 350 30% 12%;
 
-    --muted: 30 25% 88%;
-    --muted-foreground: 0 15% 40%;
+    --muted: 30 15% 85%;
+    --muted-foreground: 350 15% 45%;
 
-    --accent: 43 66% 52%;
-    --accent-foreground: 0 21% 15%;
+    --accent: 38 72% 55%;
+    --accent-foreground: 350 40% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 20% 85%;
-    --input: 30 20% 85%;
-    --ring: 352 59% 30%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 350 55% 25%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     --font-display: 'Playfair Display', serif;
-    --font-body: 'Lato', sans-serif;
-    --font-heading: 'Montserrat', sans-serif;
-
-    --shadow-card: 0 4px 20px -4px hsl(352 59% 30% / 0.1);
-    --shadow-card-hover: 0 12px 32px -8px hsl(352 59% 30% / 0.18);
-    --shadow-hero: 0 8px 40px -12px hsl(352 59% 30% / 0.25);
+    --font-body: 'DM Sans', sans-serif;
   }
 }
 
@@ -52,17 +48,26 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    letter-spacing: -0.02em;
   }
 }
 
 @layer components {
   .bakery-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
