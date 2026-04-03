@@ -46,7 +46,7 @@ const FeaturedProductCard = ({ product, index }: FeaturedProductCardProps) => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="w-full h-72 md:h-[420px] object-cover"
+                className="w-full h-72 md:h-[460px] object-cover"
               />
             </AnimatePresence>
             {/* Gradient overlay on image */}

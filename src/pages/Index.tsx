@@ -96,7 +96,7 @@ const Index = () => {
             <div className="absolute -top-20 right-0 h-48 w-48 rounded-full bg-primary/10 blur-3xl" />
             <div className="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-accent/10 blur-3xl" />
 
-            <div className="relative px-5 py-12 md:px-8 md:py-16 lg:px-10">
+            <div className="relative px-5 py-14 md:px-10 md:py-20 lg:px-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
