@@ -206,26 +206,35 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary py-10">
+      <footer className="bg-primary py-14 md:py-20">
         <div className="bakery-container text-center">
-          <h3 className="font-display text-2xl font-bold text-primary-foreground mb-2">
-            Ready to Order?
-          </h3>
-          <p className="font-body text-primary-foreground/80 mb-6">
-            Send us a message on WhatsApp and we'll get your order ready!
-          </p>
-          <a
-            href="https://wa.me/?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb855] text-[#fff] font-body font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <MessageCircle className="w-5 h-5" />
-            Chat with Us
-          </a>
-          <p className="text-primary-foreground/50 text-sm font-body mt-8">
-            © 2026 Bakery. Made with ❤️
-          </p>
+            <h3 className="font-heading text-2xl md:text-4xl font-bold text-primary-foreground mb-3">
+              Ready to Order?
+            </h3>
+            <p className="font-body text-primary-foreground/80 mb-8 text-base md:text-lg max-w-md mx-auto">
+              Send us a message on WhatsApp and we'll get your order ready!
+            </p>
+            <motion.a
+              href="https://wa.me/?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order!"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2.5 bg-[#25D366] text-white font-body font-bold py-3.5 px-8 rounded-2xl text-base md:text-lg shadow-lg shadow-[#25D366]/20 transition-colors duration-300 hover:bg-[#1fb855]"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Chat with Us
+            </motion.a>
+            <p className="text-primary-foreground/40 text-sm font-body mt-10">
+              © 2026 Bakery. Made with ❤️
+            </p>
+          </motion.div>
         </div>
       </footer>
     </div>
