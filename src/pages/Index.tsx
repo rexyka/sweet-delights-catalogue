@@ -34,43 +34,48 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Floating WhatsApp */}
+      <FloatingWhatsApp />
+
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/55 to-background" />
-        <div className="relative bakery-container py-20 md:py-40 text-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/80 via-foreground/60 to-background" />
+        <div className="relative bakery-container py-24 md:py-44 lg:py-52 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 mb-8">
               <ChefHat className="w-4 h-4 text-accent" />
-              <span className="text-sm font-body font-medium text-white/90">
+              <span className="text-sm font-body font-semibold text-white/95 tracking-wide">
                 Artisan Bakery
               </span>
             </div>
-            <h1 className="font-heading text-3xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
+            <h1 className="font-heading text-4xl md:text-7xl lg:text-8xl font-extrabold text-white mb-5 leading-[1.1] drop-shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
               Freshly Baked
               <br />
-              <span className="text-accent">Happiness</span>
+              <span className="text-accent drop-shadow-[0_2px_10px_rgba(194,139,50,0.4)]">Happiness</span>
             </h1>
-            <p className="font-body text-base md:text-xl text-white/85 max-w-2xl mx-auto mb-8 leading-relaxed">
+            <p className="font-body text-base md:text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
               Handcrafted pastries and desserts made with love, premium ingredients,
               and generations of baking tradition.
             </p>
-            <a
+            <motion.a
               href="https://wa.me/?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order!"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb855] text-[#fff] font-body font-bold py-3.5 px-6 md:py-4 md:px-8 rounded-2xl text-base md:text-lg transition-all duration-300 hover:shadow-hero hover:-translate-y-1 w-full sm:w-auto justify-center"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2.5 bg-[#25D366] text-white font-body font-bold py-4 px-8 md:py-5 md:px-10 rounded-2xl text-base md:text-lg shadow-lg shadow-[#25D366]/30 transition-colors duration-300 hover:bg-[#1fb855] w-full sm:w-auto justify-center"
             >
-              <MessageCircle className="w-5 h-5" />
+              <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
               Order on WhatsApp
-            </a>
+            </motion.a>
           </motion.div>
         </div>
       </section>
