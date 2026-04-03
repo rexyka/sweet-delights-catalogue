@@ -81,7 +81,7 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="relative -mt-10 md:-mt-16 z-10 pb-16 md:pb-24">
+      <section className="relative -mt-12 md:-mt-20 z-10 pb-20 md:pb-32">
         <div className="bakery-container">
           <div className="relative overflow-hidden rounded-[2rem] border border-primary/15 bg-card shadow-hero">
             <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/40 to-background" />
