@@ -46,7 +46,7 @@ const FeaturedProductCard = ({ product, index }: FeaturedProductCardProps) => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="w-full h-72 md:h-[420px] object-cover"
+                className="w-full h-72 md:h-[460px] object-cover"
               />
             </AnimatePresence>
             {/* Gradient overlay on image */}
@@ -141,15 +141,17 @@ const FeaturedProductCard = ({ product, index }: FeaturedProductCardProps) => {
             )}
 
             {/* WhatsApp CTA */}
-            <a
+            <motion.a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fb855] text-[#fff] font-body font-bold py-3.5 px-6 rounded-2xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 w-full text-base"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-white font-body font-bold py-4 px-6 rounded-2xl shadow-lg shadow-[#25D366]/25 transition-colors duration-300 hover:bg-[#1fb855] w-full text-base md:text-lg"
             >
-              <MessageCircle className="w-5 h-5" />
+              <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
               Order via WhatsApp
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>
