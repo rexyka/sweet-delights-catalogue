@@ -158,35 +158,36 @@ const Index = () => {
       </section>
 
       {/* Catalogue */}
-      <section className="relative pb-16 md:pb-24">
-        <div className="absolute inset-x-0 top-16 h-48 bg-primary/5 blur-3xl" />
+      <section className="relative pb-20 md:pb-32">
+        <div className="absolute inset-x-0 top-16 h-64 bg-primary/5 blur-3xl" />
         <div className="bakery-container relative z-10">
-          <div className="rounded-[2rem] border border-primary/10 bg-secondary/45 px-4 py-10 shadow-card md:px-8 md:py-14">
+          <div className="rounded-[2rem] border border-primary/10 bg-card/80 backdrop-blur-sm px-5 py-12 shadow-card md:px-10 md:py-16">
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-10"
+              className="text-center mb-12"
             >
               <span className="text-sm font-body font-semibold text-accent uppercase tracking-widest">
                 Explore More
               </span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
+              <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mt-2">
                 Our Catalogue
               </h2>
+              <div className="w-16 h-1 bg-accent rounded-full mx-auto mt-4" />
             </motion.div>
 
             {/* Category Filters */}
-            <div className="flex flex-wrap justify-center gap-2 mb-10">
+            <div className="flex flex-wrap justify-center gap-2 mb-12">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-5 py-2 rounded-xl text-sm font-body font-semibold transition-all duration-200 border ${
+                  className={`px-5 py-2.5 rounded-xl text-sm font-body font-bold transition-all duration-300 border ${
                     activeCategory === category
-                      ? "bg-primary text-primary-foreground border-primary"
-                      : "bg-card text-foreground border-border hover:border-primary/50"
+                      ? "bg-primary text-primary-foreground border-primary shadow-md"
+                      : "bg-background text-foreground border-border hover:border-primary/50 hover:bg-primary/5"
                   }`}
                 >
                   {category}
@@ -195,7 +196,7 @@ const Index = () => {
             </div>
 
             {/* Product Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-7">
               {filteredProducts.map((product, index) => (
                 <ProductCard key={product.id} product={product} index={index} />
               ))}
